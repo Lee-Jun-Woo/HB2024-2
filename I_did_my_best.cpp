@@ -65,6 +65,8 @@ void loop() {
   } else {
     resetSystem();
   }
+
+  delay(10);
 }
 
 void detectPerson() {
@@ -104,6 +106,7 @@ void handlePasswordEntry(char key) {
     resetInput();
   } else {
     inputPassword += key;
+    Serial.println(inputPassword);
   }
 }
 
@@ -122,6 +125,7 @@ void handlePasswordChange(char key) {
       }
     } else {
       inputPassword += key;
+      Serial.println(inputPassword);
     }
   } else { // 새로운 비밀번호 입력 단계
     if (key == '*') { // 새 비밀번호 입력 완료
@@ -133,6 +137,7 @@ void handlePasswordChange(char key) {
       resetInput();
     } else {
       inputPassword += key;
+      Serial.println(inputPassword);
     }
   }
 }
